@@ -24,7 +24,7 @@ task clean(type: Delete) {
 }
 
 ext {
-    majorVersion = 1
+    majorVersion = 0
     minorVersion = 0
     patchVersion = 1
 
