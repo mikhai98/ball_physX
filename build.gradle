@@ -1,0 +1,66 @@
+buildscript {
+    repositories {
+        google()
+        maven { url "https://jcenter.bintray.com" }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.2.2'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10'
+        classpath 'com.google.gms:google-services:4.3.14'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.2'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        maven { url "https://jcenter.bintray.com" }
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    majorVersion = 1
+    minorVersion = 0
+    patchVersion = 1
+
+    versionCode = majorVersion * 10000 + minorVersion * 1000 + patchVersion
+    versionName = "v$majorVersion.$minorVersion.$patchVersion"
+
+    applicationName = "Bounnce"
+    applicationId = "com.eratart.bounnce"
+    appUrl = "https://play.google.com/store/apps/details?id=$applicationId"
+    archivesBaseName = "$applicationName $versionName"
+
+    minSdkVersion = 26
+    compileSdkVersion = 33
+    targetSdkVersion = 33
+    buildToolsVersion = '33.0.0'
+
+    ktxCoreVersion = '1.9.0'
+    appCompatVersion = '1.5.1'
+
+    coordinatorLayoutVersion = '1.2.0'
+    cardViewLibVersion = '1.0.0'
+    recyclerViewLibVersion = '1.2.1'
+    swipeRefreshLayoutLibVersion = '1.1.0'
+    materialLibVersion = '1.6.1'
+    koinVersion = '3.2.0'
+    viewModelVersion = '2.5.1'
+
+    encryptedSharedPreferncesVersion = '1.1.0-alpha03'
+    gsonVersion = '2.9.1'
+
+    playReviewVersion = '2.0.0'
+
+    firebaseBomVersion = '30.4.1'
+
+    adsVersion = '21.2.0'
+
+    javaVersion = JavaVersion.VERSION_11
+    jvmTargetVersion = javaVersion.toString()
+}

@@ -1,0 +1,81 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+}
+
+apply from: "signing.gradle"
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId rootProject.ext.applicationId
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+
+        buildConfigField("String", "APP_ID", "\"${rootProject.ext.applicationId}\"")
+        buildConfigField("String", "APP_URL_GOOGLE", "\"$rootProject.ext.appUrl\"")
+    }
+
+    signingConfigs {
+        release {
+            storeFile file(signingConfig.keyFile)
+            storePassword signingConfig.storePassword
+            keyAlias signingConfig.keyAlias
+            keyPassword signingConfig.keyPassword
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+
+            minifyEnabled true
+            shrinkResources true
+
+            debuggable false
+            jniDebuggable false
+            crunchPngs false
+
+            proguardFiles 'proguard-rules.pro'
+            resValue "string", "appName", "${rootProject.ext.applicationName}"
+        }
+        debug {
+            applicationIdSuffix ".debug"
+            resValue "string", "appName", "${rootProject.ext.applicationName}.debug"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility rootProject.ext.javaVersion
+        targetCompatibility rootProject.ext.javaVersion
+    }
+
+    kotlinOptions {
+        jvmTarget = rootProject.ext.jvmTargetVersion
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation "androidx.appcompat:appcompat:$appCompatVersion"
+    implementation "com.google.android.material:material:$materialLibVersion"
+
+    implementation "androidx.security:security-crypto:$encryptedSharedPreferncesVersion"
+    implementation "com.google.code.gson:gson:$gsonVersion"
+
+    implementation "com.google.android.play:review-ktx:$playReviewVersion"
+
+    implementation platform("com.google.firebase:firebase-bom:$firebaseBomVersion")
+    implementation "com.google.firebase:firebase-crashlytics"
+    implementation "com.google.firebase:firebase-analytics"
+    implementation "com.google.android.gms:play-services-ads:$adsVersion"
+}

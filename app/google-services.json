@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "1077089830278",
+    "project_id": "bounnce",
+    "storage_bucket": "bounnce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1077089830278:android:692a555fc1d252716dd807",
+        "android_client_info": {
+          "package_name": "com.eratart.bounnce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1077089830278-4m4gu247gng3922i9okdq9q0ukgvdb3f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-tXilGKwoQ60XtXotcNBP3QVNRnQSzkI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1077089830278-4m4gu247gng3922i9okdq9q0ukgvdb3f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1077089830278:android:2fb1c2f5a0c1d0ac6dd807",
+        "android_client_info": {
+          "package_name": "com.eratart.bounnce.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1077089830278-4m4gu247gng3922i9okdq9q0ukgvdb3f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-tXilGKwoQ60XtXotcNBP3QVNRnQSzkI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1077089830278-4m4gu247gng3922i9okdq9q0ukgvdb3f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

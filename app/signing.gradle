@@ -1,0 +1,6 @@
+ext.signingConfig = [
+        keyFile      : "eratart_test.keystore",
+        storePassword: "test1234",
+        keyAlias     : "test",
+        keyPassword  : "test1234"
+]

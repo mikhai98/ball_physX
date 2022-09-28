@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="color_bg">#161837</color>
+
+    <color name="scheme_1_bg">#161837</color>
+    <color name="scheme_1_active">#B4B6D7</color>
+    <color name="scheme_1_inactive">#3E3FA6</color>
+    <color name="scheme_1_compliment">#D9923E</color>
+
+    <color name="scheme_2_bg">#0B3A39</color>
+    <color name="scheme_2_active">#9BD1D6</color>
+    <color name="scheme_2_inactive">#2E9497</color>
+    <color name="scheme_2_compliment">#D9923E</color>
+
+    <color name="scheme_3_bg">#251637</color>
+    <color name="scheme_3_active">#C3B4D7</color>
+    <color name="scheme_3_inactive">#823EA6</color>
+    <color name="scheme_3_compliment">#D9923E</color>
+
+    <color name="scheme_4_bg">#371619</color>
+    <color name="scheme_4_active">#D7B4C4</color>
+    <color name="scheme_4_inactive">#A63E6F</color>
+    <color name="scheme_4_compliment">#D9923E</color>
+
+    <color name="scheme_5_bg">#373616</color>
+    <color name="scheme_5_active">#D7D5B4</color>
+    <color name="scheme_5_inactive">#A6A43E</color>
+    <color name="scheme_5_compliment">#D9923E</color>
+
+    <color name="feedback_win">#7FFF8B</color>
+    <color name="feedback_loose">#FF6030</color>
+    <color name="live_color">#D93E3E</color>
+</resources>
