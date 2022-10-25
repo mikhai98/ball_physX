@@ -191,9 +191,12 @@ class PlayView(context: Context, attributeSet: AttributeSet?) : View(context, at
 
         val time = (end.time - start.time) / TIME_MULTIPLIER
 
-        val speedX = (end.x - start.x) * 7f/// time
-        val speedY = (end.y - start.y) * 7f/// time
-        balls.add(Ball(Pair(start.x, start.y), RADIUS, paint, -speedX, -speedY))
+        val speedX = (end.x - start.x) * 10f/// time
+        val speedY = (end.y - start.y) * 10f/// time
+        val maxSpeed = 4500f
+        val realSpeedX = if (speedX > maxSpeed) maxSpeed else speedX
+        val realSpeedY = if (speedY > maxSpeed) maxSpeed else speedY
+        balls.add(Ball(Pair(start.x, start.y), RADIUS, paint, -realSpeedX, -realSpeedY))
 
         postInvalidate()
         startPosition = null
@@ -210,11 +213,30 @@ class PlayView(context: Context, attributeSet: AttributeSet?) : View(context, at
         val rectF3 =
             RectF(centerX - 100f, centerY + 400f, width.toFloat(), centerY + 400f + lineWidth)
 
-
-        val left = RectF(-BOUNDS_OFFSET, 0f, 0f, height.toFloat())
-        val top = RectF(0f, -BOUNDS_OFFSET, width.toFloat(), 0f)
-        val right = RectF(width.toFloat(), 0f, width + BOUNDS_OFFSET, height.toFloat())
-        val bottom = RectF(0f, height.toFloat(), width.toFloat(), height.toFloat() + BOUNDS_OFFSET)
+        val left = RectF(
+            -BOUNDS_OFFSET,
+            0f,
+            0f,
+            height.toFloat()
+        )
+        val top = RectF(
+            -BOUNDS_OFFSET,
+            -BOUNDS_OFFSET,
+            width.toFloat() + BOUNDS_OFFSET,
+            0f
+        )
+        val right = RectF(
+            width.toFloat(),
+            0f,
+            width + BOUNDS_OFFSET,
+            height.toFloat()
+        )
+        val bottom = RectF(
+            -BOUNDS_OFFSET,
+            height.toFloat(),
+            width.toFloat() + BOUNDS_OFFSET,
+            height.toFloat() + BOUNDS_OFFSET
+        )
 
         walls.add(Wall(rectF2))
         walls.add(Wall(rectF3))
